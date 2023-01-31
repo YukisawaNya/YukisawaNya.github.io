@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   <meta name="robots" content="noindex,follow">
-  <link rel="canonical" href="https://fangluo.top/tags/wlan/"/>
+  <link rel="canonical" href="https://blog.fangluo.top/tags/wlan/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -39,14 +39,14 @@
   
 <meta property="og:type" content="website">
 <meta property="og:title" content="坊洛酱的小作坊">
-<meta property="og:url" content="https://fangluo.top/tags/WLAN/">
+<meta property="og:url" content="https://blog.fangluo.top/tags/WLAN/">
 <meta property="og:site_name" content="坊洛酱的小作坊">
 <meta property="og:description" content="喵">
 <meta property="og:locale">
-<meta property="og:image" content="https://fangluo.top/static/avatar.png">
+<meta property="og:image" content="https://blog.fangluo.top/static/avatar.png">
 <meta property="article:author" content="坊洛">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://fangluo.top/static/avatar.png">
+<meta name="twitter:image" content="https://blog.fangluo.top/static/avatar.png">
   <style>
     /* 首屏样式 */
     #safearea {
@@ -1797,7 +1797,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1675169502473),
+    lastupdate: new Date(1675169612321),
     sidebar: {
       for_page: ["blogger","category","tagcloud","webinfo","lastupdate"],
       for_post: ["blogger","toc"],
@@ -2635,7 +2635,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://fangluo.top/2020/03/23/WWWW/">
+  <link itemprop="mainEntityOfPage" href="https://blog.fangluo.top/2020/03/23/WWWW/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="坊洛酱的小作坊">
   </span>
@@ -3509,7 +3509,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // 请求 PV 并自增
       var pvCtn = document.querySelector('#lc-sv');
       if (pvCtn || enableIncr) {
-        var pvGetter = this.getRecord(Counter, 'https://fangluo.top' + '/#lc-sv', 'Visits').then((record) => {
+        var pvGetter = this.getRecord(Counter, 'https://blog.fangluo.top' + '/#lc-sv', 'Visits').then((record) => {
           incrArr.push(this.buildIncrement(record.objectId))
           var eles = document.querySelectorAll('#lc-sv #number');
           if (eles.length > 0) {
@@ -3527,7 +3527,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // 请求 UV 并自增
       var uvCtn = document.querySelector('#lc-uv');
       if (uvCtn || enableIncr) {
-        var uvGetter = this.getRecord(Counter, 'https://fangluo.top' + '/#lc-uv', 'Visitors').then((record) => {
+        var uvGetter = this.getRecord(Counter, 'https://blog.fangluo.top' + '/#lc-uv', 'Visitors').then((record) => {
           var vuv = this.validUV();
           vuv && incrArr.push(this.buildIncrement(record.objectId))
           var eles = document.querySelectorAll('#lc-uv #number');
@@ -3549,7 +3549,7 @@ document.addEventListener("DOMContentLoaded", function () {
         for (i = 0; i < allPV.length; i++) {
           let pv = allPV[i];
           let title = pv.getAttribute('data-title');
-          var url = 'https://fangluo.top' + pv.getAttribute('data-path');
+          var url = 'https://blog.fangluo.top' + pv.getAttribute('data-path');
           if (url) {
             var viewGetter = this.getRecord(Counter, url, title).then((record) => {
               // 是当前页面就自增
