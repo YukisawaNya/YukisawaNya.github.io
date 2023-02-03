@@ -6,7 +6,7 @@
   <link href="https://blog.fangluo.top/atom.xml" rel="self"/>
   
   <link href="https://blog.fangluo.top/"/>
-  <updated>2022-03-28T01:39:58.031Z</updated>
+  <updated>2023-02-03T05:43:05.823Z</updated>
   <id>https://blog.fangluo.top/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>拯救者r9000p安装Arch踩坑指南</title>
+    <link href="https://blog.fangluo.top/2023/02/03/r9000p-arch/"/>
+    <id>https://blog.fangluo.top/2023/02/03/r9000p-arch/</id>
+    <published>2023-02-03T05:40:59.000Z</published>
+    <updated>2023-02-03T05:43:05.823Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html"></summary>
+        
+      
+    
+    
+    
+    <category term="奇奇怪怪的教程" scheme="https://blog.fangluo.top/categories/%E5%A5%87%E5%A5%87%E6%80%AA%E6%80%AA%E7%9A%84%E6%95%99%E7%A8%8B/"/>
+    
+    
+    <category term="ArchLinux" scheme="https://blog.fangluo.top/tags/ArchLinux/"/>
+    
+    <category term="教程" scheme="https://blog.fangluo.top/tags/%E6%95%99%E7%A8%8B/"/>
+    
+    <category term="拯救者" scheme="https://blog.fangluo.top/tags/%E6%8B%AF%E6%95%91%E8%80%85/"/>
+    
+  </entry>
   
   <entry>
     <title>腾讯官方出品的QQ绿色版，确定不来下载吗！</title>
