@@ -569,7 +569,7 @@ sudo systemctl enable --now nginx
   <entry>
     <title>拯救者r9000p的ArchLinux调教指南</title>
     <url>/2023/02/03/r9000p-arch/</url>
-    <content><![CDATA[<p>本文用来记录我在使用联想拯救者r9000p时遇到的各种坑和解决方案😋</p>
+    <content><![CDATA[<p>本文用来记录我在使用联想拯救者r9000p时遇到的各种小问题和调教方案😋</p>
 <h2 id="双显卡混合模式没有165Hz"><a href="#双显卡混合模式没有165Hz" class="headerlink" title="双显卡混合模式没有165Hz"></a>双显卡混合模式没有165Hz</h2><h3 id="方法1-（仅Xorg）"><a href="#方法1-（仅Xorg）" class="headerlink" title="方法1 （仅Xorg）"></a>方法1 （仅Xorg）</h3><p>解决思路：<br>独显直连启动，通过 <code>xvidtune -show</code> 获取165Hz下的Modeline，添加到 <code>xorg.conf</code> 中。</p>
 <p>获取到的Modeline如下</p>
 <pre><code class="Modeline">&quot;2560x1600&quot;   777.41   2560 2608 2640 2720   1600 1603 1609 1732 -hsync -vsync
