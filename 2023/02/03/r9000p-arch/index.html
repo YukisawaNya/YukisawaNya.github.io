@@ -33,23 +33,24 @@
   <!-- feed -->
       <link rel="alternate" href="/atom.xml" title="坊洛酱的小作坊" type="application/atom+xml">
   <!-- 页面元数据 -->
-  <title>拯救者r9000p安装Arch踩坑指南 - 坊洛酱的小作坊</title>
-  <meta name="keywords" content="ArchLinux,教程,拯救者,null">
+  <title>拯救者r9000p的ArchLinux调教指南 - 坊洛酱的小作坊</title>
+  <meta name="keywords" content="ArchLinux,教程,拯救者,r9000p,null">
   <meta desc name="description" content="喵 - 坊洛 - 坊洛酱的小作坊">
   
 <meta property="og:type" content="article">
-<meta property="og:title" content="拯救者r9000p安装Arch踩坑指南">
+<meta property="og:title" content="拯救者r9000p的ArchLinux调教指南">
 <meta property="og:url" content="https://blog.fangluo.top/2023/02/03/r9000p-arch/">
 <meta property="og:site_name" content="坊洛酱的小作坊">
 <meta property="og:description" content="本文用来记录我在使用联想拯救者r9000p时遇到的各种坑和解决方案😋 双显卡混合模式没有165Hz方法1 （仅Xorg）解决思路：独显直连启动，通过 xvidtune -show 获取165Hz下的Modeline，添加到 xorg.conf 中。 获取到的Modeline如下 &quot;2560x1600&quot;   777.41   2560 2608 2640 2720   1600">
 <meta property="og:locale">
 <meta property="og:image" content="https://blog.fangluo.top/static/avatar.png">
 <meta property="article:published_time" content="2023-02-03T05:40:59.000Z">
-<meta property="article:modified_time" content="2023-02-09T03:14:20.799Z">
+<meta property="article:modified_time" content="2023-02-09T03:25:46.986Z">
 <meta property="article:author" content="坊洛">
 <meta property="article:tag" content="ArchLinux">
 <meta property="article:tag" content="教程">
 <meta property="article:tag" content="拯救者">
+<meta property="article:tag" content="r9000p">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://blog.fangluo.top/static/avatar.png">
   <style>
@@ -1802,7 +1803,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1675912464433),
+    lastupdate: new Date(1675913156182),
     sidebar: {
       for_page: ["blogger","category","tagcloud","webinfo","lastupdate"],
       for_post: ["blogger","toc"],
@@ -2645,7 +2646,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       <h1 class="title" itemprop="name headline">
-        拯救者r9000p安装Arch踩坑指南
+        拯救者r9000p的ArchLinux调教指南
       </h1>
       <div class='new-meta-box'>
         
@@ -2694,7 +2695,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <p>
       <i class="fa-solid fa-eye fa-fw" aria-hidden="true"></i>
       
-      <span id="lc-pv" data-title="拯救者r9000p安装Arch踩坑指南" data-path="/2023/02/03/r9000p-arch/">
+      <span id="lc-pv" data-title="拯救者r9000p的ArchLinux调教指南" data-path="/2023/02/03/r9000p-arch/">
         <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
       </span>
       
@@ -2786,7 +2787,7 @@ sudo cp /sys/class/drm/card0-eDP-1/edid /usr/lib/firmware/edid/edid.bin
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-02-09T11:14:20+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-02-09T11:25:46+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：Feb 9, 2023</p>
@@ -2798,8 +2799,8 @@ sudo cp /sys/class/drm/card0-eDP-1/edid /usr/lib/firmware/edid/edid.bin
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/ArchLinux/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>ArchLinux</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E6%95%99%E7%A8%8B/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>教程</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E6%8B%AF%E6%95%91%E8%80%85/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>拯救者</p></a></div>
-  <span hidden itemprop="keywords">ArchLinux 教程 拯救者</span>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/ArchLinux/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>ArchLinux</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E6%95%99%E7%A8%8B/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>教程</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E6%8B%AF%E6%95%91%E8%80%85/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>拯救者</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/r9000p/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>r9000p</p></a></div>
+  <span hidden itemprop="keywords">ArchLinux 教程 拯救者 r9000p</span>
 
 
         
@@ -2812,7 +2813,7 @@ sudo cp /sys/class/drm/card0-eDP-1/edid /usr/lib/firmware/edid/edid.bin
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.fangluo.top/2023/02/03/r9000p-arch/&title=拯救者r9000p安装Arch踩坑指南 - 坊洛酱的小作坊&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.fangluo.top/2023/02/03/r9000p-arch/&title=拯救者r9000p的ArchLinux调教指南 - 坊洛酱的小作坊&summary="
           
           >
           
@@ -2824,7 +2825,7 @@ sudo cp /sys/class/drm/card0-eDP-1/edid /usr/lib/firmware/edid/edid.bin
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://blog.fangluo.top/2023/02/03/r9000p-arch/&title=拯救者r9000p安装Arch踩坑指南 - 坊洛酱的小作坊&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://blog.fangluo.top/2023/02/03/r9000p-arch/&title=拯救者r9000p的ArchLinux调教指南 - 坊洛酱的小作坊&summary="
           
           >
           
@@ -2840,7 +2841,7 @@ sudo cp /sys/class/drm/card0-eDP-1/edid /usr/lib/firmware/edid/edid.bin
       
         <a class="-mob-share-telegram" title="" rel="external nofollow noopener noreferrer noopener"
           
-            target="_blank" href="https://t.me/share/url?url=https://blog.fangluo.top/2023/02/03/r9000p-arch/&text=拯救者r9000p安装Arch踩坑指南 - 坊洛酱的小作坊"
+            target="_blank" href="https://t.me/share/url?url=https://blog.fangluo.top/2023/02/03/r9000p-arch/&text=拯救者r9000p的ArchLinux调教指南 - 坊洛酱的小作坊"
           
           >
           
