@@ -41,11 +41,11 @@
 <meta property="og:title" content="拯救者r9000p安装Arch踩坑指南">
 <meta property="og:url" content="https://blog.fangluo.top/2023/02/03/r9000p-arch/">
 <meta property="og:site_name" content="坊洛酱的小作坊">
-<meta property="og:description" content="本文用来记录我在使用联想拯救者r9000p时遇到的各种坑和解决方案😋 双显卡混合模式没有165Hz解决思路：独显直连启动，通过 xvidtune -show 获取165Hz下的Modeline，添加到 xorg.conf 中。 获取到的Modeline如下 &quot;2560x1600&quot;   777.41   2560 2608 2640 2720   1600 1603 1609">
+<meta property="og:description" content="本文用来记录我在使用联想拯救者r9000p时遇到的各种坑和解决方案😋 双显卡混合模式没有165Hz方法1 （仅Xorg）解决思路：独显直连启动，通过 xvidtune -show 获取165Hz下的Modeline，添加到 xorg.conf 中。 获取到的Modeline如下 &quot;2560x1600&quot;   777.41   2560 2608 2640 2720   1600">
 <meta property="og:locale">
 <meta property="og:image" content="https://blog.fangluo.top/static/avatar.png">
 <meta property="article:published_time" content="2023-02-03T05:40:59.000Z">
-<meta property="article:modified_time" content="2023-02-03T05:43:05.823Z">
+<meta property="article:modified_time" content="2023-02-09T02:35:22.361Z">
 <meta property="article:author" content="坊洛">
 <meta property="article:tag" content="ArchLinux">
 <meta property="article:tag" content="教程">
@@ -1802,7 +1802,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1675402992327),
+    lastupdate: new Date(1675910268782),
     sidebar: {
       for_page: ["blogger","category","tagcloud","webinfo","lastupdate"],
       for_post: ["blogger","toc"],
@@ -2717,7 +2717,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
     <p>本文用来记录我在使用联想拯救者r9000p时遇到的各种坑和解决方案😋</p>
-<h2 id="双显卡混合模式没有165Hz"><a href="#双显卡混合模式没有165Hz" class="headerlink" title="双显卡混合模式没有165Hz"></a>双显卡混合模式没有165Hz</h2><p>解决思路：<br>独显直连启动，通过 <code>xvidtune -show</code> 获取165Hz下的Modeline，添加到 <code>xorg.conf</code> 中。</p>
+<h2 id="双显卡混合模式没有165Hz"><a href="#双显卡混合模式没有165Hz" class="headerlink" title="双显卡混合模式没有165Hz"></a>双显卡混合模式没有165Hz</h2><h3 id="方法1-（仅Xorg）"><a href="#方法1-（仅Xorg）" class="headerlink" title="方法1 （仅Xorg）"></a>方法1 （仅Xorg）</h3><p>解决思路：<br>独显直连启动，通过 <code>xvidtune -show</code> 获取165Hz下的Modeline，添加到 <code>xorg.conf</code> 中。</p>
 <p>获取到的Modeline如下</p>
 <pre><code class="Modeline">&quot;2560x1600&quot;   777.41   2560 2608 2640 2720   1600 1603 1609 1732 -hsync -vsync
 </code></pre>
@@ -2729,6 +2729,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 EndSection
 </code></pre>
 <p>重启即可。</p>
+<h3 id="方法2"><a href="#方法2" class="headerlink" title="方法2"></a>方法2</h3><p>首先，使用独显直连模式启动系统，然后获取现在的显示器edid并放置到firmware中</p>
+<pre><code class="shell">sudo mkdir /usr/lib/firmware/edid/
+sudo cp /sys/class/drm/card0-eDP-1/edid /usr/lib/firmware/edid/edid.bin
+</code></pre>
+<p>然后修改内核启动参数，加入</p>
+<pre><code class="shell">drm.edid_firmware=eDP:edid/edid.bin
+</code></pre>
 <h2 id="未完待续"><a href="#未完待续" class="headerlink" title="未完待续"></a>未完待续</h2>
   </div>
   
@@ -2761,10 +2768,10 @@ EndSection
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-02-03T13:43:05+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-02-09T10:35:22+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Feb 3, 2023</p>
+    <p>更新于：Feb 9, 2023</p>
   </a>
 </div>
 
@@ -2987,7 +2994,7 @@ EndSection
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%8C%E6%98%BE%E5%8D%A1%E6%B7%B7%E5%90%88%E6%A8%A1%E5%BC%8F%E6%B2%A1%E6%9C%89165Hz"><span class="toc-text">双显卡混合模式没有165Hz</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%AA%E5%AE%8C%E5%BE%85%E7%BB%AD"><span class="toc-text">未完待续</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%8C%E6%98%BE%E5%8D%A1%E6%B7%B7%E5%90%88%E6%A8%A1%E5%BC%8F%E6%B2%A1%E6%9C%89165Hz"><span class="toc-text">双显卡混合模式没有165Hz</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%951-%EF%BC%88%E4%BB%85Xorg%EF%BC%89"><span class="toc-text">方法1 （仅Xorg）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%952"><span class="toc-text">方法2</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%AA%E5%AE%8C%E5%BE%85%E7%BB%AD"><span class="toc-text">未完待续</span></a></li></ol>
     </div>
   </section>
 

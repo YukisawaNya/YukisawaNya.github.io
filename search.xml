@@ -570,7 +570,7 @@ sudo systemctl enable --now nginx
     <title>拯救者r9000p安装Arch踩坑指南</title>
     <url>/2023/02/03/r9000p-arch/</url>
     <content><![CDATA[<p>本文用来记录我在使用联想拯救者r9000p时遇到的各种坑和解决方案😋</p>
-<h2 id="双显卡混合模式没有165Hz"><a href="#双显卡混合模式没有165Hz" class="headerlink" title="双显卡混合模式没有165Hz"></a>双显卡混合模式没有165Hz</h2><p>解决思路：<br>独显直连启动，通过 <code>xvidtune -show</code> 获取165Hz下的Modeline，添加到 <code>xorg.conf</code> 中。</p>
+<h2 id="双显卡混合模式没有165Hz"><a href="#双显卡混合模式没有165Hz" class="headerlink" title="双显卡混合模式没有165Hz"></a>双显卡混合模式没有165Hz</h2><h3 id="方法1-（仅Xorg）"><a href="#方法1-（仅Xorg）" class="headerlink" title="方法1 （仅Xorg）"></a>方法1 （仅Xorg）</h3><p>解决思路：<br>独显直连启动，通过 <code>xvidtune -show</code> 获取165Hz下的Modeline，添加到 <code>xorg.conf</code> 中。</p>
 <p>获取到的Modeline如下</p>
 <pre><code class="Modeline">&quot;2560x1600&quot;   777.41   2560 2608 2640 2720   1600 1603 1609 1732 -hsync -vsync
 </code></pre>
@@ -582,6 +582,13 @@ sudo systemctl enable --now nginx
 EndSection
 </code></pre>
 <p>重启即可。</p>
+<h3 id="方法2"><a href="#方法2" class="headerlink" title="方法2"></a>方法2</h3><p>首先，使用独显直连模式启动系统，然后获取现在的显示器edid并放置到firmware中</p>
+<pre><code class="shell">sudo mkdir /usr/lib/firmware/edid/
+sudo cp /sys/class/drm/card0-eDP-1/edid /usr/lib/firmware/edid/edid.bin
+</code></pre>
+<p>然后修改内核启动参数，加入</p>
+<pre><code class="shell">drm.edid_firmware=eDP:edid/edid.bin
+</code></pre>
 <h2 id="未完待续"><a href="#未完待续" class="headerlink" title="未完待续"></a>未完待续</h2>]]></content>
       <categories>
         <category>奇奇怪怪的教程</category>
