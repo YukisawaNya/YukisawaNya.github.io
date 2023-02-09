@@ -589,6 +589,24 @@ sudo cp /sys/class/drm/card0-eDP-1/edid /usr/lib/firmware/edid/edid.bin
 <p>然后修改内核启动参数，加入</p>
 <pre><code class="shell">drm.edid_firmware=eDP:edid/edid.bin
 </code></pre>
+<h2 id="使用Fn-R切换刷新率"><a href="#使用Fn-R切换刷新率" class="headerlink" title="使用Fn+R切换刷新率"></a>使用Fn+R切换刷新率</h2><p><em>注：混合显卡模式下可能只支持方法2添加的刷新率！</em></p>
+<p>首先安装<code>xbindkeys</code></p>
+<pre><code class="shell">sudo pacman -S xbindkeys
+</code></pre>
+<p>然后编辑<code>~/.xbindkeysrc</code>（如果没有就新建一个），增加以下内容</p>
+<pre><code class="shell">#Set refresh rate
+&quot;if xrandr | grep &#39;60.01\*&#39;; then xrandr -r 165; else xrandr -r 60; fi&quot;
+    m:0x10 + c:248
+    Mod2 + NoSymbol
+</code></pre>
+<p>最后，需要让xbindkeys开机启动，编辑<code>/etc/xprofile</code>，加入一行</p>
+<pre><code class="shell">xbindkeys
+</code></pre>
+<h2 id="调整触控板滚动速度"><a href="#调整触控板滚动速度" class="headerlink" title="调整触控板滚动速度"></a>调整触控板滚动速度</h2><p>可以使用使用<code>xinput</code>修改触控板滚动速度</p>
+<pre><code class="shell">xinput set-prop &#39;MSFT0001:00 04F3:31AD Touchpad&#39; &#39;libinput Scrolling Pixel Distance&#39; &#123;int&#125;
+</code></pre>
+<p>其中<code>&#123;int&#125;</code>部分是一个整数，范围<code>10~50</code>，数字越大滚动越慢。请将<code>&#123;int&#125;</code>替换成一个你认为合适的数值。</p>
+<p>调整到合适的速度后将这行命令写入<code>/etc/xprofile</code>即可自动生效</p>
 <h2 id="未完待续"><a href="#未完待续" class="headerlink" title="未完待续"></a>未完待续</h2>]]></content>
       <categories>
         <category>奇奇怪怪的教程</category>
